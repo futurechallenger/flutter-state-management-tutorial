@@ -2,6 +2,6 @@
 
 ## TODO
 
-- [ ] BLoC
-- [ ] Provider
+- [x] BLoC
+- [x] Provider
 - [ ] Scoped Model
