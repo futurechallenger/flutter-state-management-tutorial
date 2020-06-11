@@ -2,6 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:bloc_tutorial/blocs/bloc_provider.dart';
+import 'package:bloc_tutorial/blocs/cart_bloc.dart';
+import 'package:bloc_tutorial/blocs/catalog_bloc.dart';
+import 'package:bloc_tutorial/models/cart.dart';
+import 'package:bloc_tutorial/models/catalog.dart';
 import 'package:flutter/material.dart';
 
 class MyLogin extends StatelessWidget {
@@ -36,6 +41,13 @@ class MyLogin extends StatelessWidget {
                 color: Colors.yellow,
                 child: Text('ENTER'),
                 onPressed: () {
+                  final catalogBloc = BlocProvider.of<CatalogBloc>(context);
+                  final catalog = CatalogModel();
+                  catalogBloc.catalog = catalog;
+                  final cartBloc = BlocProvider.of<CartBloc>(context);
+                  final cart = CartModel();
+                  cart.catalog = catalog;
+                  cartBloc.cart = cart;
                   Navigator.pushReplacementNamed(context, '/catalog');
                 },
               )

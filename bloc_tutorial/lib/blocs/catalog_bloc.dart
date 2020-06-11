@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:bloc_tutorial/blocs/base_bloc.dart';
 import 'package:bloc_tutorial/models/catalog.dart';
-import 'package:flutter/material.dart';
 
 class CatalogBloc extends BaseBloc {
   CatalogModel _catalog;
 
+  // final _controller = StreamController<CatalogModel>.broadcast();
   final _controller = StreamController<CatalogModel>();
 
   Stream<CatalogModel> get stream => _controller.stream;

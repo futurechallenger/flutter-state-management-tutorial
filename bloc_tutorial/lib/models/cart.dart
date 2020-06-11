@@ -21,10 +21,6 @@ class CartModel extends ChangeNotifier {
     assert(_itemIds.every((id) => newCatalog.getById(id) != null),
         'The catalog $newCatalog does not have one of $_itemIds in it.');
     _catalog = newCatalog;
-    // Notify listeners, in case the new catalog provides information
-    // different from the previous one. For example, availability of an item
-    // might have changed.
-    notifyListeners();
   }
 
   /// List of items in the cart.
@@ -34,11 +30,7 @@ class CartModel extends ChangeNotifier {
   int get totalPrice =>
       items.fold(0, (total, current) => total + current.price);
 
-  /// Adds [item] to cart. This is the only way to modify the cart from outside.
   void add(Item item) {
     _itemIds.add(item.id);
-    // This line tells [Model] that it should rebuild the widgets that
-    // depend on it.
-    notifyListeners();
   }
 }

@@ -4,9 +4,7 @@
 
 import 'package:bloc_tutorial/blocs/bloc_provider.dart';
 import 'package:bloc_tutorial/blocs/cart_bloc.dart';
-import 'package:bloc_tutorial/models/catalog.dart';
 import 'package:flutter/material.dart';
-import '../models/cart.dart';
 
 class MyCart extends StatelessWidget {
   @override

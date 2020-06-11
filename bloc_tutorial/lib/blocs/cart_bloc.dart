@@ -5,26 +5,19 @@ import 'package:bloc_tutorial/models/cart.dart';
 import 'package:bloc_tutorial/models/catalog.dart';
 
 class CartBloc extends BaseBloc {
-  CartBloc({this.catalog});
-
-  CartModel _cart;
+  CartModel _cart = CartModel();
   CartModel get cart => _cart;
-  set cart(CartModel c) {
-    if (_cart == null) _cart = c;
-  }
+  set cart(CartModel c) => _cart = c;
 
-  final _controller = StreamController<Item>();
-
-  CatalogModel catalog;
-  // CatalogModel get catalog => _catalog;
-  // set catalog(CatalogModel catalog) => _catalog = catalog;
+  final _controller = StreamController<Item>.broadcast();
 
   List<int> _itemIds = [];
 
   Stream<Item> get stream => _controller.stream;
 
   /// List of items in the cart.
-  List<Item> get items => _itemIds.map((id) => catalog.getById(id)).toList();
+  List<Item> get items =>
+      _itemIds.map((id) => cart.catalog.getById(id)).toList();
 
   /// The current total price of all items.
   int get totalPrice =>
