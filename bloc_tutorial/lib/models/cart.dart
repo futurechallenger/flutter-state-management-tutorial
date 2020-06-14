@@ -2,11 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/foundation.dart';
-
 import 'catalog.dart';
 
-class CartModel extends ChangeNotifier {
+class CartModel {
   /// The private field backing [catalog].
   CatalogModel _catalog;
 
