@@ -4,4 +4,4 @@
 
 - [x] BLoC
 - [x] Provider
-- [ ] Scoped Model
+- [x] Scoped Model
