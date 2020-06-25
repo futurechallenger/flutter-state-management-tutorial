@@ -5,3 +5,4 @@
 - [x] BLoC
 - [x] Provider
 - [x] Scoped Model
+- [ ] State & InheritedWidget
